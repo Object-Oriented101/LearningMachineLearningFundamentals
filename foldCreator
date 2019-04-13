@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Apr 12 20:51:28 2019
+
+@author: reality
+"""
+
+def make_folds(x, num_folds):
+    division = len(x) / num_folds;
+    holder = []
+    tempHolder = []
+    counter = 0;
+    for index in x:
+        tempHolder.append(index);
+        counter = counter + 1; 
+        if counter == division:
+            holder.append(tempHolder);
+            tempHolder = [];
+            counter = 0;
+    print(holder)
+    
+make_folds([1,2,3,4,5,6],3)
