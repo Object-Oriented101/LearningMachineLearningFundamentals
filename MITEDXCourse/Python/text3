@@ -1,0 +1,24 @@
+candy: dessert
+carrots: vegetable
+candy: dessert
+steak: meat, cake: dessert
+chicken: meat
+kale: vegetable, peaches: fruit
+peaches: fruit
+pork: meat
+kale: vegetable
+steak: meat, kale: vegetable
+kale: vegetable, peaches: fruit
+candy: dessert, pork: meat
+pork: meat
+apples: fruit
+bananas: fruit, pears: fruit
+carrots: vegetable, kale: vegetable
+kale: vegetable
+ice cream: dessert, steak: meat
+bananas: fruit
+apples: fruit, peaches: fruit
+peaches: fruit
+steak: meat
+carrots: vegetable, cookies: dessert
+steak: meat, apples: fruit

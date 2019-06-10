@@ -7,26 +7,29 @@ Created on Sat Jun  8 14:38:50 2019
 """
 
 import numpy as np
-import time;
+
 def evolve(u):
-    start= time.time()
     temp = np.copy(u)
-    vert = len(u)
-    horz = len(u[0])
-    print(u)
-    temp[1:vert-1,1] = temp[1:vert-1,0] + temp[1:vert-1,1] #left border
-    temp[1:vert-1,horz-2] = temp[1:vert-1,horz-1] + temp[1:vert-1,horz-2] #right border
-    temp[1][1:horz-1] = temp[0][1:horz-1]+temp[1][1:horz-1]; #top border
-    temp[vert-2][1:horz-1] = temp[vert-1][1:horz-1] + temp[vert-2][1:horz-1]#bottom border
-    temp[1:vert-1,1:horz-1] = temp[1:vert-1,1:horz-1]/ 4;
+    mainMatrix = temp[1:-1, 1:-1]
+    print(mainMatrix)
+    horzMiddle = int(len(u[0]) /2)
+    vertMiddle = int(len(u)/2)
+
+
+    print(temp[0:-vertMiddle+1,1:-1])
+    mainMatrix = mainMatrix +  0.25*temp[vertMiddle:,1:-1];
+    mainMatrix = mainMatrix +  0.25*temp[1:-1,0:horzMiddle+1];
+    mainMatrix = mainMatrix +  0.25*temp[1:-1,horzMiddle:];
+    mainMatrix = mainMatrix +  0.25*temp[0:vertMiddle+1,1:-1] 
+    temp[1:-1,1:-1] = mainMatrix
     print(temp)
-    end = time.time()
-    print(end-start)
     return np.asarray(temp)
 
 
 
 input = np.array([[100, 100, 100, 100, 100],
+                            [100,   0,   0,   0, 100],
+                            [100,   0,   0,   0, 100],
                             [100,   0,   0,   0, 100],
                             [100, 100, 100, 100, 100]])
 
@@ -35,6 +38,19 @@ evolve(input)
 
 
 """
+    Copy111
+    
+        temp = np.copy(u)
+    temp[1:-1,1] = temp[1:-1,0] + temp[1:-1,1] #left border
+    temp[1:-1,-2] = temp[1:-1,-1] + temp[1:-1,-2] #right border
+    temp[1,1:-1] = temp[0,1:-1]+temp[1,1:-1]; #top border
+    temp[-2,1:-1] = temp[-1,1:-1] + temp[-2,1:-1]#bottom border
+    temp[1:-1,1:-1] = temp[1:-1,1:-1]/ 4;
+    print(temp)
+    return np.asarray(temp)
+    
+    111
+
     temp = np.copy(u)
     vert = len(u)
     horz = len(u[0])

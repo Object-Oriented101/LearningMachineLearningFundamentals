@@ -68,12 +68,13 @@ for i in array:
             finalset = {i : z}
         elif current == highest:
             print("added2nd")
-            if item[0] > z[0]:
+            if item > z:
+                print(z + "added")
                 finalset = {i : z}
+                item = z
     finalAnswer.update(finalset)
     print(finalset)
 print(finalAnswer)
-return finalAnswer
-
-
 f.close()
+
+#ADD RETURN STATEMANT HERE
