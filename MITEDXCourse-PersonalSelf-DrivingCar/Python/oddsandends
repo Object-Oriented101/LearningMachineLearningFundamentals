@@ -1,0 +1,80 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Jun  9 13:50:18 2019
+
+@author: reality
+"""
+from collections import Counter
+from collections import defaultdict
+
+f = open('/home/reality/Documents/LearningMachineLearningFundamentals/MITEDXCourse/Python/text')
+
+counts = Counter()
+
+
+for line in f:
+    #Declaring constants 
+    frag = line.rstrip()
+    #print("+++++" + frag)
+    commaAmount = frag.count(",")
+    commaConstant = frag.count(",")
+    
+    #Actual algorithm
+    for i in range(commaConstant+1):
+        if commaAmount == 0:
+            word = frag;
+            #print(word)
+            counts[word] += 1
+            #item = word[0:word.find(":")]
+            #category = word[word.find(":") + 2:]
+            #print(item + " : " + category)
+        else:
+            word = frag[0:frag.find(",")]
+            #print(word)
+            counts[word] += 1
+            #item = word[0:word.find(":")]
+            #category = word[word.find(":") + 2:]
+            #print(item + " :  " + category)
+            
+            
+            #Trunket of the word
+            frag = frag[frag.find(",") + 2:]
+            commaAmount = commaAmount -1;
+            
+array = defaultdict(lambda: defaultdict(dict));
+for key in counts:
+    category = key[key.find(":")+2:]
+    item = key[:key.find(":")]
+    #print(category + " " + item)
+    array[category][item] = counts[key]
+#print(array)
+
+finalAnswer = {}
+for i in array:
+    print(i)
+    print()
+    
+    finalset = {}
+    highest = -1;
+    item = ""
+    for z in array[i]:
+        current = array[i][z];
+        print(z + " " + str(current))
+        if current > highest:
+            print("here")
+            highest = current
+            item = z;
+            finalset = {i : z}
+        elif current == highest:
+            print("added2nd")
+            if item > z:
+                print(z + "added")
+                finalset = {i : z}
+                item = z
+    finalAnswer.update(finalset)
+    print(finalset)
+print(finalAnswer)
+f.close()
+
+#ADD RETURN STATEMANT HERE

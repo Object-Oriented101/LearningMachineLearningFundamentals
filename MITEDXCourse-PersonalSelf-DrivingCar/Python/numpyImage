@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Jun  9 22:05:33 2019
+
+@author: reality
+"""
+
+import numpy as np;
+
+img_array = np.load('/home/reality/Downloads/PythonHW-1.2.2/odds_and_ends/resources/mystery-img.npy')
+
+
+from matplotlib import pyplot as plt
+
+plt.imshow(img_array, cmap='gray')
+plt.show()

@@ -1,0 +1,26 @@
+# student code here
+import random
+class Deck:
+    
+    def _init_(shuffled = False):
+        #Creating all of the cards
+        self.cards = []
+        suits = ['C', 'H', 'S', 'D']
+        for i in suits:
+            for z in range(2,13):
+                self.cards.append(Card(z,i))
+        self.dealt = 0
+        self.shuffled = shuffled
+        #If shuffled call method??
+    def shuffle():
+        random.shuffle(self.cards)
+    def deal_card():
+        self.dealt = self.dealt + 1;
+        if self.dealt > 52:
+            return None;
+        else:
+            temp = self.cards[0]
+            del self.cards[0]
+            return temp.__repr__();
+        
+        

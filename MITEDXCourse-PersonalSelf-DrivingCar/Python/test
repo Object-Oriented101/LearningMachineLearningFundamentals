@@ -1,0 +1,32 @@
+chicken: meat
+cookies: dessert
+pork: meat
+pork: meat
+ice cream: dessert, chicken: meat
+spinach: vegetable, cookies: dessert
+spinach: vegetable, cookies: dessert
+ice cream: dessert, pears: fruit
+carrots: vegetable
+apples: fruit, tuna: meat
+cake: dessert, apples: fruit
+peaches: fruit
+bananas: fruit, cookies: dessert
+pork: meat, candy: dessert
+steak: meat
+steak: meat, candy: dessert
+steak: meat, candy: dessert
+candy: dessert
+cookies: dessert, chicken: meat
+pork: meat
+pears: fruit
+apples: fruit
+steak: meat
+candy: dessert
+bananas: fruit, tuna: meat
+pork: meat
+cookies: dessert, carrots: vegetable
+pears: fruit, bananas: fruit
+broccoli: vegetable
+spinach: vegetable
+cookies: dessert
+carrots: vegetable, peaches: fruit
